@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Tiny todo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="todo-card" aria-labelledby="page-title">
+    <header>
+      <p class="eyebrow"><span class="brand-mark" aria-hidden="true">✓</span> Tiny todo</p>
+      <h1 id="page-title">One thing at a time.</h1>
+      <p class="intro">A small list for the day ahead.</p>
+    </header>
+
+    <form id="task-form" novalidate>
+      <label class="input-label" for="task-input">What needs doing?</label>
+      <div class="add-row">
+        <input id="task-input" name="task" type="text" placeholder="Add a task…"
+          autocomplete="off" aria-describedby="task-error">
+        <button class="add-button" type="submit">Add task</button>
+      </div>
+      <p id="task-error" class="error" role="alert" hidden>Please enter a task.</p>
+    </form>
+
+    <section class="tasks" aria-label="Your tasks">
+      <div class="list-toolbar">
+        <div class="filters" role="group" aria-label="Show tasks">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="open" aria-pressed="false">Open tasks</button>
+        </div>
+        <p id="task-count" class="task-count" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+      <p id="empty-state" class="empty-state">Nothing here yet. Add your first task above.</p>
+    </section>
+
+    <footer>In memory only. Refreshing clears your list.</footer>
+  </main>
+</body>
+</html>

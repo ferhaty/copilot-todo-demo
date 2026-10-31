@@ -1,0 +1,119 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #24342d;
+  background: #f3f5f1;
+  font-synthesis: none;
+  line-height: 1.5;
+}
+body {
+  min-height: 100svh;
+  margin: 0;
+  padding: 64px 24px;
+  display: grid;
+  place-items: center;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+button, input, label { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, input:focus-visible {
+  outline: 3px solid #39755a;
+  outline-offset: 3px;
+}
+.todo-card {
+  width: min(100%, 640px);
+  padding: 40px;
+  background: #fff;
+  border: 1px solid #dfe5de;
+  border-radius: 24px;
+  box-shadow: 0 16px 48px #283d2c08;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  color: #496151;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: #e9f1e8;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+h1 { margin: 0; font-size: 32px; line-height: 1.2; letter-spacing: -.04em; }
+.intro { margin: 10px 0 30px; color: #626f65; font-size: 15px; }
+.input-label { display: block; margin-bottom: 9px; font-size: 13px; font-weight: 650; }
+.add-row { display: flex; gap: 10px; }
+#task-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cbd5ca;
+  border-radius: 10px;
+  background: #fcfdfb;
+  color: #24342d;
+}
+#task-input::placeholder { color: #69746b; }
+#task-input[aria-invalid="true"] { border-color: #a23636; }
+.add-button {
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #315d46;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+}
+.add-button:hover { background: #254a36; }
+.error { margin: 9px 0 0; color: #a23636; font-size: 13px; }
+.tasks { margin-top: 30px; }
+.list-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.filters { display: flex; gap: 3px; padding: 3px; border-radius: 10px; background: #f0f3ee; }
+.filters button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #536158;
+  font-size: 13px;
+  font-weight: 600;
+}
+.filters button[aria-pressed="true"] { border-color: #dce4d9; background: #fff; color: #244931; }
+.task-count { margin: 0; color: #626f65; font-size: 12px; white-space: nowrap; }
+.task-list { margin: 0; padding: 0; list-style: none; }
+.task-row { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid #edf0e9; }
+.task-label { display: flex; flex: 1; align-items: flex-start; gap: 12px; min-width: 0; padding: 10px 0; cursor: pointer; }
+.task-checkbox { flex-shrink: 0; width: 20px; height: 20px; margin: 2px 0 0; accent-color: #315d46; cursor: pointer; }
+.task-text { min-width: 0; overflow-wrap: anywhere; font-size: 15px; }
+.task-row.is-done .task-text { color: #687467; text-decoration: line-through; text-decoration-color: #9ba995; }
+.delete-button { flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 9px; background: transparent; color: #69766c; font-size: 24px; line-height: 1; }
+.delete-button:hover { background: #f7eeee; color: #943f3f; }
+.empty-state { margin: 0; padding: 36px 12px; border: 1px dashed #dce4d8; border-radius: 12px; color: #626f65; text-align: center; font-size: 14px; }
+footer { margin-top: 26px; color: #657263; font-size: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  body { padding: 24px 16px; align-items: start; }
+  .todo-card { padding: 26px 20px; border-radius: 20px; }
+  h1 { font-size: 27px; }
+  .intro { margin-bottom: 26px; font-size: 14px; }
+  .add-row { gap: 8px; }
+  .add-button { padding: 0 13px; }
+  .list-toolbar { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .filters button { min-height: 40px; }
+  .task-text { font-size: 14px; }
+  footer { font-size: 11px; }
+}
